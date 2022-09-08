@@ -1,7 +1,11 @@
-﻿public class Program
+﻿namespace ZooSimulator
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        Console.WriteLine("Hello World!");
+        static void Main(string[] args)
+        {
+            var zoo = new Zoo();
+            Console.WriteLine(zoo.CountAliveAnimals());
+        }
     }
 }
