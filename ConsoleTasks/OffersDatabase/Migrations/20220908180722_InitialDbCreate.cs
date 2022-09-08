@@ -12,12 +12,11 @@ namespace OffersDatabase.Migrations
                 name: "Offers",
                 columns: table => new
                 {
-                    OfferId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    MonthlyFee = table.Column<decimal>(type: "TEXT", nullable: false),
-                    NewContractsForMonth = table.Column<int>(type: "INTEGER", nullable: false),
-                    SameContractsForMonth = table.Column<int>(type: "INTEGER", nullable: false),
-                    CancelledContractsForMonth = table.Column<int>(type: "INTEGER", nullable: false)
+                    OfferId = table.Column<int>(type: "int", nullable: false),
+                    MonthlyFee = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    NewContractsForMonth = table.Column<int>(type: "int", nullable: false),
+                    SameContractsForMonth = table.Column<int>(type: "int", nullable: false),
+                    CancelledContractsForMonth = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
