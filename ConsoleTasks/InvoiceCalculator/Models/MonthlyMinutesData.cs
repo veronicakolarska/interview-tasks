@@ -1,4 +1,5 @@
-﻿using InvoiceCalculator.Contracts;
+﻿using InvoiceCalculator.Common;
+using InvoiceCalculator.Contracts;
 
 namespace InvoiceCalculator.Models
 {
@@ -14,10 +15,10 @@ namespace InvoiceCalculator.Models
 
         public decimal CalculateMonthlyPrice()
         {
-            return this.UsedA1Minutes * .03m
-                + this.UsedTelenorMinutes * .09m
-                + this.UsedVivacomMinutes * .09m
-                + this.RoamingMinutes * .15m;
+            return this.UsedA1Minutes * Constants.MONTHLY_MINUTE_DATA_A1
+                + this.UsedTelenorMinutes * Constants.MONTHLY_MINUTE_DATA_TELENOR
+                + this.UsedVivacomMinutes * Constants.MONTHLY_MINUTE_DATA_VIVACOM
+                + this.RoamingMinutes * Constants.MONTHLY_MINUTE_DATA_ROAMING;
         }
     }
 }

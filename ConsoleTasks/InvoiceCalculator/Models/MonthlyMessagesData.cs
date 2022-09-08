@@ -1,4 +1,5 @@
-﻿using InvoiceCalculator.Contracts;
+﻿using InvoiceCalculator.Common;
+using InvoiceCalculator.Contracts;
 
 namespace InvoiceCalculator.Models
 {
@@ -17,15 +18,15 @@ namespace InvoiceCalculator.Models
         {
             if (this.SentSmsCount < 50)
             {
-                return this.SentSmsCount * 0.18m;
+                return this.SentSmsCount * Constants.MONTHLY_MESSAGES_SENT_SMS_BELOW;
             }
 
             if (this.SentSmsCount >= 50 && this.SentSmsCount <= 100)
             {
-                return this.SentSmsCount * 0.16m;
+                return this.SentSmsCount * Constants.MONTHLY_MESSAGES_SENT_SMS_ABOVE;
             }
 
-            return this.SentSmsCount * 0.11m;
+            return this.SentSmsCount * Constants.MONTHLY_MESSAGES_SENT_SMS;
         }
 
         private decimal CalculateMonthlyMmsPrice()
